@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FeedbackInfo" representedClassName="FeedbackInfo" syncable="YES">
+        <attribute name="avgStars" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="stars" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="feedback" inverseEntity="UserInfo"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="currentUser" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pass" optional="YES" attributeType="String"/>
+        <relationship name="feedback" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedbackInfo" inverseName="users" inverseEntity="FeedbackInfo"/>
+    </entity>
+    <elements>
+        <element name="FeedbackInfo" positionX="-264" positionY="-13.9765625" width="128" height="118"/>
+        <element name="UserInfo" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>
